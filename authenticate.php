@@ -18,7 +18,7 @@ if ($submitted) {
         <li><b>password</b>: <?php echo $_POST['password']; ?></li>
     </ul>
 <?php else: ?>
-    <p>You did not submit anything.</p>
+    <p>You did not submitted anything.</p>
 <?php endif; ?>
 </body>
 </html>

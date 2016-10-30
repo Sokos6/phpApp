@@ -1,6 +1,6 @@
 <?php
 
-function printableTitle(array $book): string {
+function printableTitle(array $book) {
     $result = '<i>' . $book['title'] . '</i> - ' . $book['author'];
     if (!$book['available']) {
         $result .= ' <b>Not available</b>';
@@ -16,7 +16,7 @@ function loginMessage() {
     }
 }
 
-function bookingBook(array &$books, string $title): bool {
+function bookingBook(array &$books, $title) {
     foreach ($books as $key => $book) {
         if ($book['title'] == $title) {
             if ($book['available']) {
@@ -30,7 +30,7 @@ function bookingBook(array &$books, string $title): bool {
     return false;
 }
 
-function getBooks(): array {
+function getBooks() {
     $booksJson = file_get_contents(__DIR__ . '/books.json');
     return json_decode($booksJson, true);
 }
